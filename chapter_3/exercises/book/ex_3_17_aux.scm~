@@ -1,0 +1,32 @@
+; -- append! procedure and auxiliaries
+(define (last-pair x)
+	(if (null? (cdr x)) x (last-pair (cdr x))))
+
+(define (append! x y)
+  (set-cdr! (last-pair x) y)
+  x)  
+
+(define (part-of? element queue)
+  (cond ((null? queue) #f)
+        ((eq? element queue) #t)
+        (else (part-of? element (cdr queue)))))
+
+; -- Counting pairs
+(define queue (list 'queue))
+(define one (cons 1 '()))
+(define two (list 2))
+(define three (list 3))
+(define four (list 4))
+
+(append! queue one)
+(append! queue two)
+(append! queue three)
+
+
+
+(part-of? four queue)
+(part-of? one queue)
+;(part-of? two queue)
+;(part-of? three queue)
+
+(cdr queue)

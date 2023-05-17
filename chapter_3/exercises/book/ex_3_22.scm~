@@ -1,0 +1,7 @@
+#lang simply-scheme
+(define (make-queue)
+(let ((front-ptr : : : )
+(rear-ptr : : : ))
+⟨definitions of internal procedures⟩
+(define (dispatch m) : : :)
+dispatch))
